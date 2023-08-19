@@ -71,11 +71,15 @@ WHERE stopa.name='Haymarket' and stopb.name = 'Leith'
 
 # 8
 /*
-The query shown gives the number of routes that visit either London Road (149) or Craiglockhart (53). 
-Run the query and notice the two services that link these stops have a count of 2. 
-Add a HAVING clause to restrict the output to these two routes.
+Give a list of the services which connect the stops 'Craiglockhart' and 'Tollcross'
 */
-
+SELECT distinct a.company, a.num
+FROM route a JOIN route b ON
+  (a.company=b.company AND a.num=b.num)
+  JOIN stops stopa ON (a.stop=stopa.id)
+  JOIN stops stopb ON (b.stop=stopb.id)
+WHERE stopa.name='Craiglockhart' and stopb.name =  'Tollcross'
+  
 # 9
 /*
 The query shown gives the number of routes that visit either London Road (149) or Craiglockhart (53). 
