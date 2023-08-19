@@ -1,0 +1,6 @@
+# 1
+/*
+How many stops are in the database.
+*/
+select count(name) from stops
+  
