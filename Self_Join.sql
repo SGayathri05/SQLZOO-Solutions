@@ -12,5 +12,6 @@ select id from stops where name = 'Craiglockhart'
 
 # 3
 /*
-How many stops are in the database.
+Give the id and the name for the stops on the '4' 'LRT' service.
 */
+select id, name from stops join route on stops.id = route.stop where num = '4'
